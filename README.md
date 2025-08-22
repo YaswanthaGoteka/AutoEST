@@ -6,7 +6,7 @@ It uses a **Random Forest Regressor** trained on car data that I aquired from Ka
 Specifically: Hamidreza Naderbeygi: Cars for Sale from Kaggle
 ---
 
-## 📌 Features
+## Features
 Predicts car prices based on multiple attributes:
   - Car Make (e.g., Audi, BMW, Toyota)
   - Car Model (e.g., A3, X5, Corolla)
