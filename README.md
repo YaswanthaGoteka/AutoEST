@@ -1,4 +1,4 @@
-# CarEST a Car Price Prediction Model using Random Forest Regressor
+# AutoEST a Car Price Prediction Model using Random Forest Regressor
 
 This project is a **machine learning application** that predicts the price of a car based on user-provided details such as make, model, year, color, mileage, condition, and accident history.  
 It uses a **Random Forest Regressor** trained on car data that I aquired from Kaggle Datasets.
