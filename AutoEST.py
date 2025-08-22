@@ -143,10 +143,30 @@ def get_user_input():
 
 
 # Predict price for user input
+# Predict price for user input
 while True:
     user_input = get_user_input()
     predicted_price = rf.predict(user_input)[0]
-    predicted_range = f'${round(predicted_price*0.55, 2)} - ${round(predicted_price*0.85, 2)}' # multiply by a decimal to make the prices more reasonable because dataset has overpriced pricing for mosy
+
+    # Apply different multipliers based on year
+    car_year = user_input[0][2]  # year is the 3rd element in input_data
+    current_year = 2025
+    age = current_year - car_year
+
+    if age <= 3:  # almost new
+        lower_multiplier = 1.15
+        upper_multiplier = 1.00
+    elif age <= 7:  # moderately used
+        lower_multiplier = 0.60
+        upper_multiplier = 0.75
+    elif age <= 12:  # older car
+        lower_multiplier = 0.45
+        upper_multiplier = 0.60
+    else:  # very old
+        lower_multiplier = 0.30
+        upper_multiplier = 0.45
+
+    predicted_range = f"${round(predicted_price * lower_multiplier, 2)} - ${round(predicted_price * upper_multiplier, 2)}"
     print(f"\nPredicted car price: {predicted_range}")
 
     continue_pred = input("\nWould you like to predict another car price? (yes/no): ").lower().strip()
