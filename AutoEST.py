@@ -80,8 +80,11 @@ def get_user_input():
 
     # Show available years for the chosen model
     available_years = sorted(df[df['Car_Model'] == car_model]['Year'].unique())
+    years = []
+    for year in available_years:
+        years.append(int(year))
     if len(available_years) > 0:
-        print(f"Available years for {car_model}: {available_years}")
+        print(f"Available years for {car_model}: {years}")
     else:
         print(f"⚠No specific years found in dataset for {car_model}, entering manually.")
 
@@ -89,12 +92,17 @@ def get_user_input():
     while True:
         try:
             year = int(input("Enter car year: "))
-            if (len(available_years) == 0 and 1886 <= year <= 2025) or (year in available_years):
-                break
-            if len(available_years) > 0:
-                print(f"Please choose a valid year from {available_years}.")
+            # Check if available years exist for this model
+            if available_years:
+                if year in available_years:
+                    break
+                else:
+                    print(f"Please choose a valid year from {years}.")
             else:
-                print("Please enter a valid year between 1886 and 2025.")
+                if 2000 <= year <= 2025:
+                    break
+                else:
+                    print(f"There Is No {car_make} {car_model} Made In This {year}.")
         except ValueError:
             print("Please enter a numeric year.")
 
