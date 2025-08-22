@@ -146,7 +146,7 @@ def get_user_input():
 while True:
     user_input = get_user_input()
     predicted_price = rf.predict(user_input)[0]
-    predicted_range = f'${round(predicted_price*0.55, 2)}-{round(predicted_price*0.85, 2)}' # multiply by a decimal to make the prices more reasonable because dataset has overpriced pricing for mosy
+    predicted_range = f'${round(predicted_price*0.55, 2)} - ${round(predicted_price*0.85, 2)}' # multiply by a decimal to make the prices more reasonable because dataset has overpriced pricing for mosy
     print(f"\nPredicted car price: {predicted_range}")
 
     continue_pred = input("\nWould you like to predict another car price? (yes/no): ").lower().strip()
