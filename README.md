@@ -25,7 +25,7 @@ Ensures input validation (e.g., valid years, models, conditions).
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **Python in PyCharm**
 - **Pandas** (data processing)
 - **Scikit-learn** (machine learning & preprocessing)
