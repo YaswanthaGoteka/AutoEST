@@ -3,11 +3,11 @@
 This project is a **machine learning application** that predicts the price of a car based on user-provided details such as make, model, year, color, mileage, condition, and accident history.  
 It uses a **Random Forest Regressor** trained on car data that I aquired from Kaggle Datasets.
 
-Specifically: Hamidreza Naderbeygi: Cars for Sale from Kaggle
+Specifically: Hamidreza Naderbeygi, Cars for Sale from Kaggle
 ---
 
 ## Features
-Predicts car prices based on multiple attributes:
+Predicts car price range based on multiple attributes:
   - Car Make (e.g., Audi, BMW, Toyota)
   - Car Model (e.g., A3, X5, Corolla)
   - Year of Manufacture (validated against available dataset years)
@@ -51,11 +51,13 @@ The program expects a CSV file named **`car_data.csv`** with the following colum
 ## Example Usage:
 ~~~
 Enter car details for price prediction:
-Available makes: ['aston martin', 'audi', 'bentley' ...]
+Available makes: ['aston martin', 'audi', 'bentley', 'bmw', 'bugatti', 'chevrolet', 'chevy', 'chrysler' ...]
 Enter car make: audi
-Available models: ['3 SERIES', '300', '488 GTB'...]
-Enter car model: A3
-Available years for A3: [np.int64(2010), np.int64(2011), np.int64(2012) ...
+Available models: ['3 SERIES', '300', '488 GTB', '5 SERIES', '500', '500X' ...]
+Enter car model: a
+Invalid model. Please choose from the available models.
+Enter car model: a3
+Available years for A3: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
 Enter car year: 2019
 Available colors: ['BLACK', 'BLUE', 'BROWN', 'GRAY', 'GREEN', 'ORANGE', 'RED', 'SILVER', 'WHITE', 'YELLOW']
 Enter car color: blue
@@ -65,7 +67,7 @@ Enter car condition: used
 Available accident statuses: ['NO', 'YES']
 Enter accident history: no
 
-Predicted car price: $34,302.79
+Predicted car price: $20581.67 - $25727.09
 
 Would you like to predict another car price? (yes/no): no
 
